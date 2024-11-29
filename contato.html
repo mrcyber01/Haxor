@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #101010;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px 30px;
+            background: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #00ff66;
+            text-transform: uppercase;
+        }
+
+        header nav ul {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 1rem;
+        }
+
+        header nav ul li a:hover {
+            color: #00ff66;
+        }
+
+        /* Main Section */
+        .main-section {
+            padding: 100px 30px;
+            background: #121212;
+            text-align: center;
+        }
+
+        .main-section h2 {
+            font-size: 2.5rem;
+            color: #00ff66;
+            margin-bottom: 30px;
+        }
+
+        .main-section p {
+            font-size: 1.2rem;
+            color: #b0b0b0;
+            margin-bottom: 30px;
+        }
+
+        .main-section .details {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        /* Contact Button */
+        .contact-button {
+            padding: 15px 40px;
+            background: #25d366; /* WhatsApp green */
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            text-transform: uppercase;
+            display: inline-block;
+            transition: background 0.3s, box-shadow 0.3s;
+            margin-top: 30px;
+        }
+
+        .contact-button:hover {
+            background: #128c7e;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #101010;
+            padding: 30px;
+            text-align: center;
+            color: #b0b0b0;
+            margin-top: 50px;
+        }
+
+        footer a {
+            color: #00ff66;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="#home" style="text-decoration: none; color: inherit;">Haxor</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#services">Serviços</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="main-section" id="contact">
+        <h2>Entre em Contato</h2>
+        <p>Tem alguma dúvida ou deseja mais informações sobre nossos serviços? Nossa equipe está disponível para responder a todas as suas perguntas.
+
+        </p>
+
+        <div class="details">
+            <p>Por favor, tenha em mente que nosso atendimento é realizado por um único atendente, e pode levar algum tempo para que possamos responder, dependendo da demanda. Pedimos que, por gentileza, não insista em alterações nas políticas ou preços, pois qualquer ajuste será discutido diretamente com o cliente, caso necessário. Vale ressaltar que os preços podem ser ajustados conforme a complexidade ou a situação específica de cada caso.
+
+            </p>
+            <p>Se preferir, entre em contato via WhatsApp. Garantimos um atendimento profissional e sigiloso para atender às suas necessidades de forma eficiente.
+
+            </p>
+            <p>Pagamento Somente Via Pix.</p>
+        </div>
+
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/5511999999999" class="contact-button" target="_blank">
+            Contate-nos no WhatsApp
+        </a>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Haxor - Todos os direitos reservados.</p>
+        <p><a href="#">Entre em contato conosco</a></p>
+    </footer>
+</body>
+</html>

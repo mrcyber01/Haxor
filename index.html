@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haxor - Hacker Profissional</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #101010;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px 30px;
+            background: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #00ff66;
+            text-transform: uppercase;
+        }
+
+        header nav ul {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 1rem;
+        }
+
+        header nav ul li a:hover {
+            color: #00ff66;
+        }
+
+        /* Main Intro Section */
+        .main-intro {
+            padding: 100px 30px;
+            background: #161616;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .main-intro h1 {
+            font-size: 2.5rem;
+            color: #00ff66;
+            margin-bottom: 20px;
+        }
+
+        .main-intro p {
+            font-size: 1.2rem;
+            color: #d0d0d0;
+            margin-bottom: 40px;
+        }
+
+        .main-intro .cta {
+            padding: 12px 30px;
+            background: #00ff66;
+            color: #000;
+            font-weight: bold;
+            font-size: 1rem;
+            border-radius: 50px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .main-intro .cta:hover {
+            background: #00cc52;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 30px;
+            background: #121212;
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #00ff66;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background: #1c1c1c;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-card img {
+            width: 80px; /* Tamanho adequado para ícones */
+            height: 80px; /* Tamanho adequado para ícones */
+            object-fit: contain; /* Ajusta a imagem sem distorcer */
+            margin-bottom: 15px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: #ffffff;
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            color: #b0b0b0;
+            margin-top: 10px;
+        }
+
+        .service-card .saber-mais {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #00ff66;
+            color: #000;
+            font-weight: bold;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .service-card .saber-mais:hover {
+            background: #00cc52;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="#home" style="text-decoration: none; color: inherit;">Haxor</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#services">Serviços</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="main-intro" id="home">
+        <h1>👋 Bem-vindo ào Haxor</h1>
+        <p>Se você busca contratar hackers profissionais, chegou ao lugar certo. Confira nossos serviços!</p>
+        <a href="#services" class="cta">Veja Nossos Serviços</a>
+    </section>
+
+    <section class="services" id="services">
+        <h2>Nossos Serviços</h2>
+        <div class="services-grid">
+            <!-- Serviços com links -->
+            <div class="service-card">
+                <img src="https://static.cdnlogo.com/logos/w/63/whatsapp.png" alt="Pen Test">
+                <h3>Hackear Whatsapp</h3>
+                <p>Serviço para invadir e hackear um WhatsApp. Espionar todas as conversas. Serviço de hacker feito online, à distância, pelo número do celular.</p>
+                <a href="whatsapp.html" class="saber-mais">Saiba Mais</a>
+            </div>
+            <div class="service-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/8702/8702053.png" alt="Data Recovery">
+                <h3>Hackear Celular</h3>
+                <p>Serviço para hackear um celular pelo número à distância. Poderá acessar todo o seu conteúdo, espionar o celular completamente: conversas, fotos, dados e aplicativos.</p>
+                <a href="celular.html" class="saber-mais">Saiba Mais</a>
+            </div>
+            <div class="service-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/768px-Instagram_icon.png" alt="Access">
+                <h3>Hackear Instagram</h3>
+                <p>Serviço para hackear uma conta do Instagram. Válido para recuperar ou obter a senha de qualquer conta do Instagram ou obter o nome de usuário desejado.                </p>
+                <a href="instagram.html" class="saber-mais">Saiba Mais</a>
+            </div>
+            <div class="service-card">
+                <img src="https://logopng.com.br/logos/facebook-13.png" alt="Phishing">
+                <h3>Hackear Facebook</h3>
+                <p>Serviço para hackear uma conta do Facebook. Com nosso serviço profissional poderá recuperar a sua conta ou obter qualquer senha de Facebook desejada</p>
+                <a href="facebook.html" class="saber-mais">Saiba Mais</a>
+            </div>
+            <div class="service-card">
+                <img src="https://icons.iconarchive.com/icons/dtafalonso/win-10x/512/Email-icon.png" alt="Audits">
+                <h3>Hackear E-mail</h3>
+                <p>Serviço para hackear um e-mail. Recuperar sua conta ou obter qualquer senha. Não importa o tipo de conta. Podemos hackear qualquer senha de e-mail.</p>
+                <a href="e-mail.html" class="saber-mais">Saiba Mais</a>
+            </div>
+            <div class="service-card">
+                <img src="https://images.vexels.com/media/users/3/143402/isolated/preview/afbbf15d5e82a1c4fb5a55c4eacf3003-icone-de-chapeu-de-formatura.png" alt="Social Engineering">
+                <h3>Hackear Faculdade</h3>
+                <p>Serviço para hackear o sistema da sua faculdade e fazer mudanças no seu boletim ou histórico acadêmico. Será possível mudar as suas notas, adicionar ou remover matérias, melhorar a média, e mais coisas.</p>
+                <a href="faculdade.html" class="saber-mais">Saiba Mais</a>
+            </div>
+            <div class="service-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/6078/6078761.png" alt="Encryption">
+                <h3>Recuperar Fundos</h3>
+                <p>Perdeu fundos devido a roubo ou fraude? Sua conta está bloqueada ou congelada? Somos especializados em ajudar você a recuperar seu dinheiro de forma rápida e eficiente, tanto com criptomoedas quanto com contas bancárias.</p>
+                <a href="disponivel.html" class="saber-mais">Saiba Mais</a>
+            </div>
+            <div class="service-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/925/925014.png" alt="Malware Analysis">
+                <h3>Ganhe Dinheiro</h3>
+                <p>Está em busca de ganhar dinheiro de forma rápida e segura? Oferecemos soluções eficientes e comprovadas para ajudá-lo a alcançar seus objetivos financeiros com facilidade e sem riscos.</p>
+                <a href="disponivel.html" class="saber-mais">Saiba Mais</a>
+            </div>
+            <div class="service-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/4228/4228171.png" alt="IA Automation">
+                <h3>Sob Medida</h3>
+                <p>Não pode encontrar o serviço de hackers que está procurando? Sem problemas. Podemos executar um serviço profissional personalizado de acordo com suas necessidades e exigências. Deixe-nos saber o que precisa exatamente.</p>
+                <a href="contato.html" class="saber-mais">Saiba Mais</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disponível em Breve</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #101010;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px 30px;
+            background: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #00ff66;
+            text-transform: uppercase;
+        }
+
+        header nav ul {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 1rem;
+        }
+
+        header nav ul li a:hover {
+            color: #00ff66;
+        }
+
+        /* Main Section */
+        .main-section {
+            padding: 100px 30px;
+            background: #121212;
+            text-align: center;
+        }
+
+        .main-section h2 {
+            font-size: 3rem;
+            color: #00ff66;
+            margin-bottom: 30px;
+        }
+
+        .main-section p {
+            font-size: 1.2rem;
+            color: #b0b0b0;
+            margin-bottom: 30px;
+        }
+
+        /* Footer */
+        footer {
+            background: #101010;
+            padding: 30px;
+            text-align: center;
+            color: #b0b0b0;
+            margin-top: 50px;
+        }
+
+        footer a {
+            color: #00ff66;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="#home" style="text-decoration: none; color: inherit;">Haxor</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#services">Serviços</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="main-section">
+        <h2>Disponível em Breve!</h2>
+        <p>Estamos trabalhando em algo incrível para você. Em breve, nosso serviço estará disponível. Fique ligado!</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Haxor - Todos os direitos reservados.</p>
+        <p><a href="contato.html">Entre em contato conosco</a></p>
+    </footer>
+</body>
+</html>
