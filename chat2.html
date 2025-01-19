@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatbot Escuro</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #121212;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      color: #ffffff;
+    }
+
+    .chat-container {
+      width: 100%;
+      max-width: 420px;
+      height: 85vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      background-color: #1e1e1e;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+    }
+
+    .chat-box {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .message {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .message img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .message-content {
+      padding: 12px 16px;
+      border-radius: 15px;
+      max-width: 75%;
+      word-wrap: break-word;
+      font-size: 15px;
+      line-height: 1.5;
+      font-weight: 500;
+    }
+
+    .bot-message .message-content {
+      background-color: #2c2c2c;
+      color: #ffffff;
+    }
+
+    .user-message .message-content {
+      background-color: #00ff66;
+      color: #000000;
+      margin-left: auto;
+    }
+
+    .typing-indicator {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .typing-indicator img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .dots {
+      display: flex;
+      gap: 4px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      background-color: #00ff66;
+      border-radius: 50%;
+      animation: blink 1.4s infinite;
+    }
+
+    .dot:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .dot:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes blink {
+      0%, 80%, 100% {
+        opacity: 0;
+      }
+      40% {
+        opacity: 1;
+      }
+    }
+
+    .options-container {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 15px 20px;
+      background-color: #2c2c2c;
+      box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .option-button {
+      background-color: #00ff66;
+      color: #000000;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .option-button:hover {
+      background-color: #00cc52;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .chat-box {
+      padding-bottom: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-container">
+    <div class="chat-box" id="chatBox">
+      <div class="message bot-message">
+        <img src="https://thypix.com/wp-content/uploads/2022/08/hacker-avatar-profile-picture-thypix-85.jpg" alt="Bot">
+        <div class="message-content">Olá! Como posso ajudar você hoje?</div>
+      </div>
+    </div>
+    <div class="options-container" id="optionsContainer">
+      <button class="option-button" onclick="startService()">Você deseja saber mais sobre o serviço de hackeamento de e-mail?</button>
+    </div>
+  </div>
+
+  <script>
+    function startService() {
+      addUserMessage("Você deseja saber mais sobre o serviço de hackeamento de e-mail?");
+      hideOptions();
+      simulateTyping(() => {
+        addBotMessage("Nosso serviço de hackeamento de e-mail tem um custo de R$650. Gostaria de continuar?");
+        showOptions(["Sim", "Não"], handleInitialResponse);
+      });
+    }
+
+    function handleInitialResponse(choice) {
+      addUserMessage(choice);
+      hideOptions();
+      if (choice === "Sim") {
+        simulateTyping(() => {
+          addBotMessage("Você deseja saber como funciona o serviço?");
+          showOptions(["Sim", "Não"], handleServiceDetails);
+        });
+      } else {
+        finalizeChat();
+      }
+    }
+
+    function handleServiceDetails(choice) {
+      addUserMessage(choice);
+      hideOptions();
+      if (choice === "Sim") {
+        simulateTyping(() => {
+          sendLongMessage("O valor para hackear ou recuperar uma conta no Instagram é de 300 reais, mas entendemos que nem todos podem pagar esse valor, especialmente se for uma conta com poucos seguidores. Por exemplo, se a conta tiver apenas 20 seguidores, sabemos que cobrar 300 reais não faria sentido. Por isso, podemos ajustar o valor conforme a situação. O mínimo que conseguimos fazer é 50 reais, mas isso depende do motivo e da complexidade do caso. Para contas maiores, como as de 1k seguidores, o valor será proporcional, pois exige mais ferramentas e esforço. Nosso processo é totalmente anônimo, utilizamos ferramentas de segurança avançadas que garantem que o dono da conta não receba notificações ou perceba o acesso. Porém, se você acessar a conta depois do serviço sem nossas medidas de segurança, o dono poderá receber notificações no dispositivo e no e-mail. Para evitar isso, cobramos uma taxa de 50 reais que garante o acesso anônimo e seguro, permitindo que você monitore a conta sem preocupações.");
+        });
+        setTimeout(() => sendLongMessage("Sabemos que pode haver receio de pagar pelo serviço e não obter o retorno esperado. No entanto, trabalhamos com serviços especializados em recuperação de contas, e não com a venda de mercadorias. Você não está comprando um produto em plataformas como Mercado Livre ou Amazon. Apesar disso, tratamos todos os nossos clientes com seriedade e comprometimento. Atendemos muitas pessoas diariamente, e os serviços de recuperação de contas são complexos e exigem tempo. Hackear um Instagram, por exemplo, não é algo que possa ser feito em apenas 30 minutos, já que esse é apenas o tempo necessário para iniciar o processo com nossas ferramentas especializadas."), 2000);
+        setTimeout(() => sendLongMessage("Vou te explicar como funciona nossa política de pagamento e as opções disponíveis. A primeira opção é o pagamento adiantado de 300 reais, mas sabemos que nem todos preferem essa forma. A segunda opção é a mais comum, onde você paga uma taxa adicional de 100 reais, que é obrigatória. Ou seja, você pagará 400 reais no total. Não aceitamos valores abaixo de 100 reais, como 50 reais, ou qualquer outra quantia. A taxa de 100 reais deve ser paga adiantada, preferencialmente via Pix. Em alguns casos, podemos considerar o pagamento de 300 reais, mas isso dependerá da situação específica. A terceira opção é pagar em Bitcoin. Para isso, você precisará instalar uma corretora (recomendamos a Binance) e uma carteira de criptomoedas, como a Blue Wallet. Depois, transfira os bitcoins da corretora para sua carteira e nos envie um print da transação. Somente depois disso, realizaremos o serviço, e quando enviarmos as provas, você faz o pagamento. Essa é a única opção em que o pagamento é feito após as provas. Não aceitamos Pix nem outros métodos de pagamento fora dessas condições. Diferente de outros serviços, oferecemos opções de pagamento que garantem a segurança do cliente. Muitos golpistas prometem serviços por preços extremamente baixos, como 20 reais, e as pessoas acabam comprando achando que o serviço será eficaz. Não confie no preço, confie na qualidade. Aqui, trabalhamos de forma séria e transparente, garantindo um serviço seguro e eficiente. Se não concordar com essas condições, pedimos que não insista e não faça a compra."), 4000);
+        setTimeout(() => sendLongMessage("Garantimos total confidencialidade."), 6000);
+        setTimeout(() => sendLongMessage("O prazo de entrega é entre 24 e 48 horas."), 8000);
+        setTimeout(() => {
+          addBotMessage("Gostaria de ver um vídeo demonstrando o serviço?");
+          showOptions(["Sim", "Não"], handleVideoRequest);
+        }, 10000);
+      } else {
+        finalizeChat();
+      }
+    }
+
+    function sendLongMessage(message) {
+      const chatBox = document.getElementById("chatBox");
+      let index = 0;
+      const chunkSize = 150;  // Tamanho máximo de cada "bloco" da mensagem
+      const chunks = Math.ceil(message.length / chunkSize);
+
+      const sendChunk = () => {
+        if (index < chunks) {
+          const messagePart = message.slice(index * chunkSize, (index + 1) * chunkSize);
+          addBotMessage(messagePart);
+          index++;
+          setTimeout(sendChunk, 1500); // Intervalo entre as partes
+        }
+      };
+      sendChunk();
+    }
+
+    function handleVideoRequest(choice) {
+      addUserMessage(choice);
+      hideOptions();
+      if (choice === "Sim") {
+        simulateTyping(() => {
+          addBotMessage("Aqui está o vídeo que demonstra o serviço.");
+          setTimeout(() => {
+            addBotMessage("Veja no YouTube como fazemos o hackeamento de e-mail:");
+            addBotMessage('<a href="https://www.youtube.com/watch?v=exemplo" target="_blank">Clique aqui para assistir</a>');
+            simulateTyping(() => {
+              addBotMessage("Se você entendeu tudo perfeitamente, clique no botão abaixo para ir ao WhatsApp.");
+              document.getElementById("optionsContainer").innerHTML = `
+                <a href="https://wa.me/SEUNUMEROWHATSAPP" class="option-button" target="_blank">Ir para o WhatsApp</a>
+              `;
+            });
+          }, 2000); 
+        });
+      } else {
+        finalizeChat();
+      }
+    }
+
+    function addBotMessage(message) {
+      const chatBox = document.getElementById("chatBox");
+      const botMessage = document.createElement("div");
+      botMessage.classList.add("message", "bot-message");
+      botMessage.innerHTML = `<img src="https://thypix.com/wp-content/uploads/2022/08/hacker-avatar-profile-picture-thypix-85.jpg" alt="Bot"><div class="message-content">${message}</div>`;
+      chatBox.appendChild(botMessage);
+      scrollToBottom();
+    }
+
+    function addUserMessage(message) {
+      const chatBox = document.getElementById("chatBox");
+      const userMessage = document.createElement("div");
+      userMessage.classList.add("message", "user-message");
+      userMessage.innerHTML = `<div class="message-content">${message}</div>`;
+      chatBox.appendChild(userMessage);
+      scrollToBottom();
+    }
+
+    function showOptions(options, callback) {
+      const optionsContainer = document.getElementById("optionsContainer");
+      optionsContainer.innerHTML = "";
+      options.forEach(option => {
+        const button = document.createElement("button");
+        button.classList.add("option-button");
+        button.textContent = option;
+        button.onclick = () => {
+          callback(option);
+        };
+        optionsContainer.appendChild(button);
+      });
+    }
+
+    function hideOptions() {
+      const optionsContainer = document.getElementById("optionsContainer");
+      optionsContainer.innerHTML = "";
+    }
+
+    function simulateTyping(callback) {
+      const chatBox = document.getElementById("chatBox");
+      const typingIndicator = document.createElement("div");
+      typingIndicator.classList.add("typing-indicator");
+      typingIndicator.innerHTML = `<img src="https://thypix.com/wp-content/uploads/2022/08/hacker-avatar-profile-picture-thypix-85.jpg" alt="Bot"><div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>`;
+      chatBox.appendChild(typingIndicator);
+      scrollToBottom();
+
+      const delay = Math.random() * 1000 + 1500;
+      setTimeout(() => {
+        chatBox.removeChild(typingIndicator);
+        callback();
+      }, delay);
+    }
+
+    function scrollToBottom() {
+      const chatBox = document.getElementById("chatBox");
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    function finalizeChat() {
+      addBotMessage("Obrigado pelo seu tempo! Se precisar de mais informações, estou à disposição.");
+    }
+  </script>
+</body>
+</html>
