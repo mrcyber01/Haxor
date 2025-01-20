@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Atendimento</title>
   <style>
     * {
@@ -124,7 +124,7 @@
       display: flex;
       flex-direction: column;
       gap: 8px;
-      padding: 15px 20px;
+      padding: 15px 10px;
       background-color: #2c2c2c;
       box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
     }
@@ -154,6 +154,16 @@
     .chat-box {
       padding-bottom: 100px; /* Ajustei o padding para garantir que as mensagens e os botões não se sobreponham */
     }
+
+    @media screen and (min-width: 375px) and (max-width: 428px) {
+  .chat-container {
+    height: 88vh; /* Aumenta a altura do contêiner */
+  }
+  .option-button {
+    font-size: 14px; /* Reduz levemente o texto dos botões */
+  }
+}
+
   </style>
 </head>
 <body>
